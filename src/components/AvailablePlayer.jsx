@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function AvailablePlayers({players, setPlayers, onChoose}) {
+function AvailablePlayers({ players, setPlayers, onChoose }) {
 
 
     useEffect(
@@ -30,10 +30,10 @@ function AvailablePlayers({players, setPlayers, onChoose}) {
                 </div>
                 <div className="flex justify-between items-center gap-1">
                     <p className="font-extrabold ">Price: ${player.bidding_price}</p>
-                    <button className="border border-gray-300 px-2 xl:px-4 py-1 rounded-lg font-semibold" onClick={()=>onChoose(player)}>Choose player</button>
+                    <button className="border border-gray-300 px-2 xl:px-4 py-2 rounded-lg font-semibold hover:bg-[#e7fc4b]" onClick={() => onChoose(player)}>Choose player</button>
                 </div>
             </div>)}
-            
+
         </section>
     </>
 }

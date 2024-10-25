@@ -1,11 +1,13 @@
-import Header from "./components/Header"
-import Main from "./components/Main"
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import './App.css'
+import Header from "./components/Header"
+import Main from "./components/Main"
 import NewsLetter from "./components/NewsLetter";
+import Footer from "./components/footer";
+import './App.css'
+
 
 function App() {
 
@@ -23,14 +25,15 @@ function App() {
 
   return (
     <>
-
       <Header money={money} onClaim={onClaim} />
+      <Main money={money} onDecreaseMoney={onDecreaseMoney} />
+      <section className="relative">
+        <NewsLetter />
+        <Footer />
+      </section>
       <ToastContainer position="top-center" />
-      <Main money={money} onDecreaseMoney={onDecreaseMoney}/>
-      <NewsLetter/>
-      <h1 style={{ height: "100vh" }}></h1>
     </>
   )
 }
 
-export default App
+export default App;

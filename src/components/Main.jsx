@@ -18,21 +18,21 @@ function Main({ money, onDecreaseMoney }) {
     }
 
     const onChoose = (player) => {
-        
-        const {player_id, name, bidding_price} = player;
+
+        const { player_id, name, bidding_price } = player;
 
         if (money >= bidding_price) {
 
             let found = selectedPlayers.find(player => player.player_id === player_id);
 
-            if (found) {
-                toast.warn(`Player already selected`, {
-                    position: "top-right"
-                });
-                return
-            }
-
             if (playerCount < 6) {
+
+                if (found) {
+                    toast.warn(`Player already selected`, {
+                        position: "top-right"
+                    });
+                    return
+                }
 
                 setPlayerCount(playerCount + 1);
                 setSelectedPlayers([...selectedPlayers, player]);
@@ -42,20 +42,17 @@ function Main({ money, onDecreaseMoney }) {
                 });
             }
             else {
-                toast.error('player limit reached', {
-                    position: "top-right"
-                });
+                toast.error('player limit reached');
             }
 
         }
         else {
-            toast.error('unsufficient balance', {
-                position: "top-right"
-            });
+            toast.error('Not engough money to buy this player. Claim some Credit');
         }
     }
 
     const onRemove = (player_id) => {
+        
         let filterPlayers = selectedPlayers.filter(
             player => player.player_id !== player_id
         )
@@ -68,7 +65,7 @@ function Main({ money, onDecreaseMoney }) {
 
     return <main className="w-10/12 mx-auto relative">
         <MainHeader onActive={onActive} firstActive={firstActive} playerCount={playerCount} />
-        {firstActive ? <AvailablePlayers onChoose={onChoose} players={players} setPlayers={setPlayers} /> : <SelectedPlayers playerCount={playerCount} setFirstActive={setFirstActive} selectedPlayers={selectedPlayers} onRemove={onRemove}/>}
+        {firstActive ? <AvailablePlayers onChoose={onChoose} players={players} setPlayers={setPlayers} /> : <SelectedPlayers playerCount={playerCount} setFirstActive={setFirstActive} selectedPlayers={selectedPlayers} onRemove={onRemove} />}
 
     </main>
 }

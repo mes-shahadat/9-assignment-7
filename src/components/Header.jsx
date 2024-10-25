@@ -2,9 +2,9 @@ import Nav from "./Nav";
 import bannerMain from '../assets/banner-main.png'
 import bgShadow from '../assets/bg-shadow.png'
 
-function Header({money, onClaim}) {
+function Header({ money, onClaim }) {
 
-    
+
     return <header>
         <Nav money={money} />
         <div className="w-10/12 mx-auto text-center bg-black bg-no-repeat bg-cover text-white space-y-6 px-1 py-16 rounded-xl mt-32 mb-10" style={{ backgroundImage: `url(${bgShadow})` }}>
