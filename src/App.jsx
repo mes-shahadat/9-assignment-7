@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css'
+import NewsLetter from "./components/NewsLetter";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
       <Header money={money} onClaim={onClaim} />
       <ToastContainer position="top-center" />
       <Main money={money} onDecreaseMoney={onDecreaseMoney}/>
+      <NewsLetter/>
       <h1 style={{ height: "100vh" }}></h1>
     </>
   )

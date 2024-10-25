@@ -7,7 +7,7 @@ function SelectedPlayers({ playerCount, setFirstActive, selectedPlayers, onRemov
         <section className="my-10 space-y-4">
             {
                 
-                selectedPlayers.map(player => <div key={player.player_id} className="flex items-center justify-between border border-gray-300 rounded-xl p-4">
+                selectedPlayers.map(player => <div key={player.player_id} className="flex items-center justify-between gap-1 border border-gray-300 rounded-xl p-4">
                     <div className="inline-flex items-center gap-4">
                         <img className="w-16 h-16 object-cover rounded-xl" src={player.image} alt="" />
                         <div>

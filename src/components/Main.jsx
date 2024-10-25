@@ -61,6 +61,9 @@ function Main({ money, onDecreaseMoney }) {
         )
         setSelectedPlayers(filterPlayers);
         setPlayerCount(playerCount - 1);
+        toast.warn(`Player removed`, {
+            position: "top-right"
+        });
     }
 
     return <main className="w-10/12 mx-auto relative">
