@@ -16,15 +16,12 @@ function App() {
     toast.success("Credit Added to your Account");
   }
 
-  const onDecreaseMoney = (price) => {
-    setMoney(money - price)
-  }
-
   return (
     <>
 
       <Header money={money} onClaim={onClaim} />
       <ToastContainer position="top-center" />
+      <Main />
     </>
   )
 }
