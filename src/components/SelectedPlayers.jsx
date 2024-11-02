@@ -9,10 +9,11 @@ function SelectedPlayers({ playerCount, setFirstActive, selectedPlayers, onRemov
 
                 selectedPlayers.map(player => <div key={player.player_id} className="flex items-center justify-between gap-1 border border-gray-300 rounded-xl p-4">
                     <div className="inline-flex items-center gap-4">
-                        <img className="w-16 h-16 object-cover rounded-xl" src={player.image} alt="" />
-                        <div>
+                        <img className="w-20 h-20 object-cover rounded-xl" src={player.image} alt="" />
+                        <div className="space-y-1">
                             <p className="text-xl font-bold">{player.name}</p>
                             <p>{player.batting_type}</p>
+                            <p>${player.bidding_price}</p>
                         </div>
                     </div>
                     <button onClick={() => onRemove(player.player_id)}><i className="fa-solid fa-trash-can text-xl text-red-600"></i></button>
